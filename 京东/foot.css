@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+
+@charset "utf-8";
+/* 尾部 */
+.foot{ width:1210px; height:599px;margin-top:20px;}
+.ft{ width:1210px; height:193px;}
+.ftl{ width:888px; height:190px; border:1px solid #ddd; border-top:2px solid #aaa;}
+.ftl1{ width:444px; height:190px;}
+.ftl1 p{ font-size:13px; color:#666; font-weight:bold;}
+.sai{ width:50px; height:50px; padding:15px 12px; position:relative;} 
+.sai a{ display:inline-block;}
+.sai span{background:url(img/bjt2.png) no-repeat -200px -50px; position:absolute; top:8px;right:5px; width:17px; height:20px;}
+.js{ width:344px; height:60px; padding:10px 0px 10px 6px; position:relative;}
+.js span{ background:url(img/bjt2.png) no-repeat 0 -80px; position:absolute; width:34px; height:24px; top:33px; right:10px;}
+.ftr{ width:310px; height:193px;}
+.ftrt{ height:139px; width:308px; border:1px solid #ddd; border-top:2px solid #aaa;}
+.ftr p{ font-size:12px; font-weight:bold; color:#666;}
+.ftrt a{ color:#005ea7;}
+.ftrb{ padding-top:4px;}
+.ftrb .input3{ width:215px; height:23px; border:1px solid #aaa; padding-left:25px;}
+.position{ position:relative;}
+.ftrb span{ position:absolute; background:url(img/23.png) no-repeat -255px -50px; width:18px; height:15px; top:4px; left:4px;}
+.ftrb .input4{ width:63px; height:25px; background:#e4393c; color:#fff; font-weight:bold; border-radius:4px; cursor:pointer;}
+.fb{ width:1210px; height:176px; border-top: 1px solid #ddd; border-bottom:1px solid #ddd; margin-top:10px;}
+.fb li{ width:152px; padding-left:40px; position:relative;}
+.fb p{ height:30px; line-height:30px; font-weight:bold; font-size:14px; color:#666;}
+.fb a{ display:block; line-height:20px;}
+.fb li span{ width:40px; height:40px; background:url(img/bjt.png) no-repeat; position:absolute; top:4px; left:-4px;}
+.fb b{ line-height:20px; color:#666;}
+.fb .pp1{ background-position:0px -55px;}
+.fb .pp2{ background-position:-50px -55px;}
+.fb .pp3{ background-position:0px -102px;}
+.fb .pp4{ background-position:-50px -102px;}
+.fb .pp5{ background-position:0px -149px;}
+.pp6{ background:url(img/bjt2.png) no-repeat -3px -132px; width:203px; height:169px; position:absolute; top:0; left:0; z-index:-1;}
+.ff{ width:1210px; height:218px; font-family:'微软雅黑';}
+.ff li{ padding-right:10px;}
+.ff p{ text-align: center; color:#666; line-height:18px; height:18px;}
+.wan{ padding-top:10px; padding-left:370px;}
+.wan a{ margin-right:13px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

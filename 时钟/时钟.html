@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	window.onload=function(){
+		var timer=null;
+		function tuDou(n){
+			return n<10?'0'+n:''+n;	
+		}
+		var oDate=new Date();
+		var y=oDate.getFullYear();
+		var mon=oDate.getMonth()+1;
+		var date=oDate.getDate();
+		var oyear=document.getElementById('year');
+		var apic=oyear.getElementsByTagName('img');
+		var str=y+'-'+tuDou(mon)+'-'+tuDou(date)+'-';
+		for(var i=0;i<apic.length;i++){
+			if(apic[i].alt==0){
+				apic[i].src='images/'+str.charAt(i)+'.png';	
+			}	
+		}
+		function time2(){
+			var oday=document.getElementById('day');
+			var aimg=oday.getElementsByTagName('img');
+			var oDate=new Date();
+			var week=oDate.getDay();
+			var h=oDate.getHours();
+			var miu=oDate.getMinutes();
+			var s=oDate.getSeconds();
+			var str2=tuDou(h)+'-'+tuDou(miu)+'-'+tuDou(s)+week;
+			for(var i=0;i<aimg.length;i++){
+				if(aimg[i].alt==0){
+					aimg[i].src='images/'+str2.charAt(i)+'.png';	
+				}	
+			}
+			var arr=['seven','one','two','three','four','five','six'];
+			aimg[aimg.length-1].src='images/'+arr[week]+'.png';
+		}
+		time2();
+		clearInterval(timer);
+		timer=setInterval(time2,1000);	
+	};
+</script>
+</head>
+
+<body>
+
+<div id="clock" class="date">
+    <div class="year" id="year">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/year.png" alt="year" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/month.png" alt="month" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/seven.png" alt="seven" />
+    </div>
+    <div class="time" id="day">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="pos2" src="images/week.png" alt="week" />
+        <img class="num2" src="images/one.png" alt="one" />
+    </div>
+</div>
+
+</body>
+</html>

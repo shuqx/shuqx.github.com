@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{ background:url(images/body_bg0.jpg) no-repeat top center; background-size:100%;}
+*{ margin:0; padding:0}
+ul{ width:500px; height:300px; margin:50px auto; position:relative}
+ul li{ width:100%; height:100%; position:absolute; top:0; left:0; background:#0F0; list-style:none; line-height:200px; text-align:center; font-size:30px; opacity:0; -webkit-transition:1s all ease}
+ul li:nth-child(1){ background:url(css3+h5/img2/1.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(2){ background:url(css3+h5/img2/2.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(3){ background:url(css3+h5/img2/3.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(4){ background:url(css3+h5/img2/4.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(5){ background:url(css3+h5/img2/5.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(6){ background:url(css3+h5/img2/6.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(7){ background:url(css3+h5/img2/7.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(8){ background:url(css3+h5/img2/8.jpg) no-repeat; background-size:100%;}
+ul li:nth-child(9){ background:url(css3+h5/img2/9.jpg) no-repeat; background-size:100%;}
+ul li a{ display:block; width:100%; height:100%; text-decoration:none; color:#000; font-size:36px; line-height:300px;}
+.cur{ opacity:1; z-index:5}
+.l1,.r1{ z-index:3; opacity:0.8}
+.l1{ -webkit-transform:perspective(800px) translateX(-150px) rotateY(45deg)}
+.l2{ -webkit-transform:perspective(800px) translateX(-200px) rotateY(45deg)}
+.r1{ -webkit-transform:perspective(800px) translateX(150px) rotateY(-45deg)}
+.r2{ -webkit-transform:perspective(800px) translateX(200px) rotateY(-45deg)}
+div{ width:210px; margin:50px auto; overflow:hidden}
+div a{ width:100px; height:30px; float:left; line-height:30px; text-align:center; text-decoration:none; background:#999; margin-left:5px;}
+</style>
+<script>
+window.onload=function(){
+	var oPrev=document.querySelector('.prev');	
+	var oNext=document.querySelector('.next');
+	var aLi=document.getElementsByTagName('li');
+	var bOk=false;
+	var aClass=[];
+	for(var i=0;i<aLi.length;i++){
+		aClass.push(aLi[i].className);	
+	}
+	oNext.onclick=function(){
+		if(bOk){return;}
+		bOk=true;
+		aClass.unshift(aClass.pop());
+		tab();
+	};
+	oPrev.onclick=function(){
+		if(bOk){return;}
+		bOk=true;
+		aClass.push(aClass.shift());
+		tab();
+	};
+	function tab(){
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].className=aClass[i];	
+		}
+		var oCur=document.querySelector('.cur');
+		function tranEnd(){
+			oCur.removeEventListener('transitionend',tranEnd,false);
+			bOk=false;
+		}
+		oCur.addEventListener('transitionend',tranEnd,false);	
+	}
+};
+</script>
+</head>
+
+<body>
+	<div>
+    	<a href="javascript:;" class="prev">上一张</a>
+    	<a href="javascript:;" class="next">下一张</a>
+    </div>
+	<ul>
+    	<li class="l2"><a href="css3+h5/3D盒子.html">3D盒子</a></li>
+    	<li class="l1"><a href="css3+h5/3d图片环.html">3d图片环</a></li>
+    	<li class="cur"><a href="css3+h5/css3-时钟.html">CSS3-时钟</a></li>
+    	<li class="r1"><a href="css3+h5/爆炸.html">爆炸</a></li>
+    	<li><a href="css3+h5/倒影.html">倒影</a></li>
+    	<li><a href="css3+h5/翻书效果.html">翻书效果</a></li>
+    	<li><a href="css3+h5/颗粒翻转.html">颗粒翻转</a></li>
+    	<li><a href="css3+h5/音频播放器3.html">音频播放器</a></li>
+    	<li><a href="css3+h5/视频播放器.html">视频播放器</a></li>
+    </ul>
+</body>
+</html>

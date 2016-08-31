@@ -1,0 +1,1988 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/base.css" />
+<style>
+/*banner*/
+.banner{ min-width:980px; background:url(img/banner.jpg) no-repeat top;}
+.banner_in{ position:relative; height:410px;}
+.banner .ban_h{ padding-top:10px;}
+.ban_h .ban_sou{margin-left:340px;}
+.ban_sou .hao{ width:220px; height:28px; border:1px solid #89a6ad; border-right:none; background:none; border-radius:2px; color:#fff; padding-left:9px;}
+.ban_sou a{ width:36px; height:30px; background:url(img/sprite1.png) no-repeat 0 -15px;}
+.ban_nav li{ margin-left:10px; position:relative;}
+.ban_nav a{ line-height:30px; color:#FFF;}
+.ban_nav  span{ width:14px; height:11px; background:url(img/sprite1.png) no-repeat 0 -1px; margin:11px 4px 0 0;}
+.ban_nav i{ width:0; height:0; border:4px solid transparent; border-top:4px solid #e4e4e4; margin:14px 0 0 4px;}
+.ban_nav em{ width:7px; height:7px; background:#f45910; border-radius:50%; position:absolute; top:3px; right:7px;}
+.ban_nav .dian{right:-8px;}
+.banner_in .ban_new{ width:217px; height:347px; background:url(img/site-focuslist_bg.png) no-repeat -11px -12px; position:absolute; bottom:7px; right:0;padding-top:5px; opacity:0.7; padding-left:7px;}
+.ban_new a{ line-height:34px; color:#ccc; display:block; width:204px; padding-left:8px;} 
+.ban_new a:hover{ background:#699f00; color:#fff;}
+/*link*/
+.link{ min-width:980px; height:98px; background:#010101; padding-top:8px;}
+.link_in{ height:76px; border:1px solid #688a00; border-radius:7px; padding:6px 0;}
+.link_in .logo{ width:112px; height:74px; padding-left:18px;}
+.logo .qiy{ margin-top:12px; margin-bottom:5px; display:block;}
+.link_in .link_nav{ width:850px;}
+.link_nav li{ background:url(img/line.png) no-repeat right;}
+.link_nav a{ float:left; color:#ccc; line-height:24px; width:50%;}
+.link_nav a:hover{ color:#78a524;}
+.link_nav .one{ width:40px; padding-left:18px;}
+.link_nav .one a{ width:2em;}
+.link_nav .two,.link_nav .five{ width:97px; padding-left:18px;}
+.link_nav .three,.link_nav .four{ width:79px; padding-left:18px;}
+.link_nav .six{ width:167px; padding-left:18px;}
+.link_nav .seven{ width:163px; padding-left:18px; background:none;}
+.seven .shangcheng,.seven .own{ position:relative;}
+.seven i{ width:7px; height:7px; background:#f45910; position:absolute; top:0; right:14px; border-radius:50%;}
+.seven .you{ right:25px;}
+/*today*/
+.today{margin-top:25px;}
+.today_l{ width:380px;}
+.today_l .today_l_h{ line-height:40px; border-bottom:2px solid #85ba4d;}
+.today_l_h h2{ font-size:24px; color:#699f00;}
+.today_l_h .more{ color:#699f00; margin-left:8px; line-height:36px; margin-top:4px;}
+.today_l_h .dubo{ width:64px; height:24px; border:1px solid #e9e9e9;border-radius:9px; margin-top:5px;}
+.dubo i{ width:14px; height:14px; background:url(img/sprite1.png) no-repeat -125px -20px; margin:3px 6px 0 8px;}
+.dubo span{ line-height:24px;}
+.today_l .today_new{ text-align:center;}
+.today_new .li_ke{ font-size:18px; line-height:40px;}
+.today_new i{ width:13px; height:13px; background:url(img/sprite1.png) no-repeat -40px -181px; margin:10px 8px 0 0;}
+.today_new a{line-height:32px; font-size:14px;}
+.today_new .font{ margin-right:10px;}
+.renxing .tit{ width:175px;line-height:35px; padding-left:5px; background:#f2f2f2; display:block;}
+.today_new .snew{ margin-top:10px;}
+.snew .first{ margin-right:20px;}
+.today_m{ width:380px; margin:0 20px;}
+.today_m .toutiao{ position:relative; margin-bottom:15px;}
+.toutiao .tit{ width:100%;height:40px; position:absolute; bottom:0; left:0; background:rgba(0,0,0,.7);}
+.toutiao i{ width:32px; height:27px; background:url(img/sprite1.png) no-repeat 0 -45px; margin:7px 12px 0 7px;}
+.toutiao span{ margin-top:7px; line-height:27px; color:#FFF;}
+.today_r .ren2{ margin:15px 0;}
+.today a:hover{ color:#78a524;}
+/*zongyi*/
+.zongyi{margin-top:38px;}
+.zongyi_l{ width:780px;}
+.zongyi_l .zongyi_l_h{ height:47px; border-bottom:2px solid #8ac024;}
+.zongyi_l_h h2{ line-height:47px; font-size:28px; color:#8ac024;}
+.zongyi_l_h i{ width:15px; height:25px; background:url(img/sprite1.png) no-repeat -131px -143px; margin:12px 5px 0 0;}
+.zongyi_l_h .more{ line-height:36px; color:#8ac024; margin-top:11px; margin-left:18px; margin-right:34px;}
+.zongyi_l_h .tv{ line-height:34px; margin-top:13px;}
+.zongyi_l_h span{ width:14px; height:14px; background:url(img/sprite1.png) no-repeat -151px -143px; margin:24px 8px 0 8px;}
+.zongyi_l_h>div{ margin-top:14px;}
+.zongyi_l .zongyi_con{ margin-top:25px; margin-right:-20px;  overflow:hidden;}
+.zongyi_con li{ position:relative; margin-bottom:15px; margin-right:20px;}
+.zongyi_con .big{ width:380px;}
+.zongyi_con .info{height:53px; background:#f2f2f2; padding-left:5px; padding-top:2px; width:375px;}
+.info p{ line-height:30px;}
+.info a{ color:#999;}
+.zongyi_con .qi{ width:371px; height:75px; position:absolute; bottom:0; left:0; padding-right:4px;}
+.zongyi_con .qi span{ height:16px; padding:0 4px; background:rgba(0,0,0,.5); color:#FFF;}
+.big i{ width:125px; height:45px; background:url(img/icon-today.png); position:absolute; top:0; left:0;}
+.big em{ width:39px; height:39px; background:url(img/sprite1.png) no-repeat -83px -86px; position:absolute; top:0;right:0;}
+.zongyi_con .sma{ width:175px;}
+.zongyi_con .huamian{ width:171px;}
+.zizhi i{ width:39px; height:39px; background:url(img/sprite.png) no-repeat -103px -1200px; position:absolute; top:0; right:0;}
+.zongyi_r{ width:180px; margin-left:20px;}
+.zongyi_r .zongyi_l_h{}
+.zongyi_r .more{ margin-right:0;}
+.zongyi_r .guanggun{ margin-top:25px;}
+.zongyi_r .guanggun_new{ height:223px; border-bottom:1px solid #ebebeb; background:#f2f2f2; padding-left:5px;}
+.guanggun_new p{ height:37px; width:175px; border-bottom:1px dotted #ccc; line-height:36px; text-align:center;}
+.guanggun_new ul{ margin-top:3px;}
+.guanggun_new i{ width:6px; height:6px; background:url(img/sprite1.png) no-repeat -20px -163px; margin:15px 5px 0 5px;}
+.guanggun_new a{ line-height:34px; font-size:14px;}
+/*dubo*/
+.dubo_h{ height:42px; border-bottom:1px solid #e1e1e1;}
+.dubo_h h2{ line-height:42px; font-size:20px; color:#699f00;}
+.dubo_h span{ width:33px; height:19px; background:#ff6d34; border-radius:7px; border-bottom-left-radius:0; text-align:center; line-height:19px; color:#FFF; margin:12px 12px 0 4px;}
+.dubo_h a{ line-height:38px; color:#699f00; margin-top:4px;}
+.dubo_d{ margin-top:15px; height:155px;}
+.dubo_d li{ position:relative; margin-right:20px;}
+.dubo_d .tit{ width:175px; height:50px; background:#f2f2f2; padding-left:5px; padding-top:4px;}
+.tit a{ display:inline-block; height:19px; padding:0 3px; background:#fff; border:1px solid #e7e7e7; line-height:19px;}
+.dubo_d .huazhi{ width:180px; height:74px; position:absolute;bottom:0; left:0;}
+.huazhi span{ height:16px; padding:0 3px; border-radius:2px; color:#FFF; background:rgba(0,0,0,.5); line-height:16px;}
+.dubo_d  i{ width:39px; height:39px; background:url(img/sprite1.png) no-repeat -83px -86px; position:absolute; top:0; right:0; margin:0;}
+.dubo_d .last{ margin-right:0;}
+/*talkshow*/
+.talkshow{ margin-top:15px;}
+.talkshow .dubo_h{ height:42px; border-bottom:1px solid #ccc;}
+.talkshow .dubo_h a{ line-height:38px; margin:5px 0 0 8px;}
+.talkshow li{ margin-right:20px;}
+/*ad*/
+.bad{ margin-top:50px;}
+/*yule*/
+.yule .zuo{ width:800px;}
+.yule .zhuanti{ margin-top:25px; position:relative;}
+.yule .zhuanti_new{ width:175px; height:50px; background:#f2f2f2; padding-left:5px; padding-top:4px;}
+.zhuanti_new a{ line-height:20px; }
+.zhuanti span{ width:37px; height:21px; background:#699f00; position:absolute; top:0; right:0; text-align:center; line-height:21px;color:#FFF;}
+.yule .zhuanti_d{ margin-top:15px;}
+/*like*/
+.like li{ margin-bottom:15px; }
+.like .in{ width:180px; height:155px; background:#76b300; text-align:center;}
+.like .in a{ line-height:155px; color:#FFF; font-size:20px;}
+/*tuiguang*/
+.tuiguang{ margin-top:210px; }
+.tuiguang p{ width:84px; height:22px; background:#8ac024; border-top-left-radius:3px; border-top-right-radius:3px; text-align:center; line-height:22px; color:#FFF;}
+.tuiguang div{ height:150px; border:1px solid #8ac024; padding-top:10px; padding-left:26px; position:relative;}
+.tuiguang div a{ margin-right:20px;}
+.tuiguang .prev{ position:absolute; left:4px; top:50%; margin-top:-13px;}
+.tuiguang .next{ position:absolute; right:4px; top:50%; margin-top:-13px; margin-right:0;}
+/*movie*/
+.zongyi .movie{ margin-top:25px; margin-right:-20px;}
+.movie li{ margin-right:20px; margin-bottom:15px;}
+.movie .movie_d{ width:175px; height:48px; background:#f2f2f2; padding-left:5px; padding-top:6px; position:relative;}
+.movie_d h6{ line-height:20px;}
+.movie_d span{ line-height:20px; color:#999;}
+.movie_d i{font-size:16px; color:#ff722c; position:absolute; top:10px; right:5px;}
+.zongyi_r .movie_r{ margin-top:25px;}
+.movie_r li{ margin-bottom:13px;}
+.movie_r span{ width:20px; height:20px; background:#a0a0a0; border-radius:2px; color:#FFF; text-align:center; line-height:20px; margin-right:5px;}
+.movie_r .font{ background:#81ad00;}
+.movie_r a{ line-height:20px;}
+.movie_r i{ width:7px; height:2px; background:#81ad00; margin-top:10px;}
+.zongyi_r .movie_r_d{ margin-top:20px;}
+/*mv*/
+.mv{ margin-top:10px;}
+.mv_l{ width:580px;}
+.mv_l .mv_l_h{ height:44px; border-bottom:1px solid #e1e1e1;}
+.mv_l_h h2{ font-size:22px; line-height:44px; color:#699f00; font-weight:normal;}
+.mv_l_h a{ line-height:40px; margin-top:4px;}
+.mv_l_h .more{ color:#699f00; line-height:38px; margin-top:6px; margin-left:8px; margin-right:34px;}
+.mv_l_h span{ width:14px; height:14px; background:url(img/sprite1.png) no-repeat -151px -143px; margin:18px 8px 0 8px;}
+.mv_l .movie_l_d{ margin-top:15px;}
+.movie_l_d li{ margin-right:20px;}
+.movie_l_d .last{ margin-right:0;}
+.movie_l_d div{ width:175px; height:35px; background:#f2f2f2; padding-left:5px;}
+.movie_l_d div a{ line-height:35px;}
+.mv .mv_r{ width:380px; margin-left:20px;}
+/*tuiguang2*/
+.tuiguang2{ margin-top:40px;}
+/*cartoon*/
+.cartoon{ margin-top:40px;}
+.dongman{ width:580px;}
+.dongman .dongman_h{ height:40px; border-bottom:1px solid #8ac024;}
+.dongman_h i{ width:15px; height:25px; background:url(img/sprite1.png) no-repeat -131px -143px; margin:10px 5px 0 0;}
+.dongman_h h2{ font-size:26px; line-height:44px; color:#8ac024; font-weight:normal;}
+.dongman_h .more{ line-height:36px; color:#8ac024; margin:8px 34px 0 10px;}
+.dongman_h a{ line-height:34px; margin-top:10px;}
+.dongman_h  span{ width:14px; height:14px; background:url(img/sprite1.png) no-repeat -151px -143px; margin:21px 8px 0 8px;}
+.dongman .dongman_d{ margin-top:25px;}
+.dongman_d .big{ width:380px; margin-right:20px;}
+.dongman_d .big div{ height:35px; background:#f2f2f2; line-height:35px; padding-left:5px; width:375px;}
+.dongman_d .small{ width:180px; margin-bottom:15px;}
+.dongman_d .small div{ height:35px; background:#f2f2f2; line-height:35px; padding-left:5px; width:175px;}
+.cartoon .shaoer{ width:180px; margin-left:20px;}
+/*pe*/
+.pe_l{ width:380px;}
+.pe .pe_m{ width:380px;}
+.pe .small{ margin-right:20px;}
+.pe .last{ margin-right:0;}
+.pe .aqiy a{ line-height:34px; margin-top:10px;}
+/*yuanchuang*/
+.zongyi_r .dingyue{ width:170px; height:314px; padding-left:10px; background:
+#f2f2f2; margin-top:25px; padding-top:10px;}
+.dingyue li{ margin-bottom:12px;}
+.dingyue div p{ line-height:20px;}
+.dingyue div span{ line-height:20px; color:#999;}
+.dingyue .ding{ display:block; width:68px; height:22px; background:#699f00; border-radius:2px; line-height:22px; text-align:center; color:#FFF;}
+.dingyue div{ margin-left:8px;}
+/*youxi*/
+.youxi .mv_l_h i{ width:15px; height:25px; background:url(img/sprite1.png) no-repeat -131px -143px; margin-top:12px; margin-right:5px;}
+/*pindao*/
+.pindao{ margin-top:45px;}
+.pindao li{ position:relative; margin-right:20px;}
+.pindao .last{ margin-right:0;}
+.pindao div{ width:180px; height:34px; background:#8ac024; border-bottom:5px solid #6ba400; text-align:center;}
+.pindao div span{ color:#FFF; line-height:34px; font-size:20px; margin-right:8px;}
+.pindao div a{ line-height:28px; margin-top:6px; color:#FFF;}
+.pindao .info{ width:175px; height:24px; background:rgba(0,0,0,.4); position:absolute; left:0; bottom:39px; color:#FFF; text-align:left; line-height:24px; padding-left:5px;}
+/*尾巴根*/
+.foot{ height:234px; padding-top:45px;}
+.f_left{ width:469px; height:172px; background:#f7f7f7; border:1px solid #e7e7e7; border-right:none; padding-top:10px; padding-left:20px;}
+.ff_t h2{ font-size:24px; line-height:46px; margin-right:16px; font-weight:normal;}
+.ff_t a{ margin-top:20px; font-style:normal;}
+.foot a:hover{ color:#8ac024;}
+.f_left .parter{ width:400px;}
+.f_left .parter a{ width:80px; line-height:28px; float:left;}
+.f_right{ width:468px; height:172px; background:#f7f7f7; border:1px solid #e7e7e7; padding-top:10px; padding-left:20px;}
+.f_right .dongtai{ width:380px;}
+.f_right .dongtai a{ width:190px; line-height:28px;}
+/*larger_line*/
+.larger_line{ min-width:980px; height:1px; background:#ccc;}
+/*尾巴尖*/
+footer{ height:198px; border-top:1px solid #ccc; min-width:980px;}
+.foter{ padding-top:12px;}
+.foter a:hover{ color:#8ac024;}
+.foter .jshao{ text-align:center;}
+.jshao a{ padding:0 10px; line-height:26px;}
+.foter .jbao{ width:450px; margin:0 auto; height:20px; padding-top:8px;}
+.zhengj a{ margin-right:5px; line-height:28px;}
+.zhengj a i{ width:16px; height:16px; background:url(img/icon3.png); margin-top:6px; margin-right:2px;}
+.zhengj a .two{ width:18px; height:16px;background:url(img/icon4.png);}
+.zhengj a .three{ width:14px; height:16px;background:url(img/icon5.png);}
+.foter .zige a{ margin-right:15px;}
+.foter .zige .ts{ margin-right:48px;}
+</style>
+</head>
+
+<body>
+	<!--banner-->
+    <div class="banner">
+    	<div class="banner_in w">
+            <div class="ban_h clearfix w">
+                <div class="ban_sou fl clearfix">
+                    <input type="text" value="大好时光" class="fl hao"/>
+                    <a class="fl"></a>
+                </div>
+                <ul class="fr ban_nav clearfix">
+                    <li class="fl clearfix">
+                        <a href="#" class="fl">登录</a>
+                    </li>
+                    <li class="fl clearfix">
+                        <a href="#" class="fl">注册</a>
+                    </li>
+                    <li class="fl clearfix">
+                        <a href="#" class="fl">开通VIP</a>
+                    </li>
+                    <li class="fl clearfix">
+                        <span class="fl"></span>
+                        <a href="#" class="fl">上传</a>
+                        <i class="fl"></i>
+                        <em></em>
+                    </li>
+                    <li class="fl clearfix">
+                        <a href="#" class="fl">下载</a>
+                        <em class="dian"></em>
+                    </li>
+                    <li class="fl clearfix">
+                        <a href="#" class="fl">消息</a>
+                        <i class="fl"></i>
+                    </li>
+                    <li class="fl clearfix">
+                        <a href="#" class="fl">播放记录</a>
+                        <i class="fl"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="ban_new">
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            	<a href="#">北上广不相信眼泪：职场迷情</a>
+            </div>
+        </div>
+    </div>
+    <!--link-->
+    <div class="link">
+    	<div class="w link_in clearfix">
+        	<div class="logo fl">
+            	<a href="#" class="qiy"><img src="img/logo.png" /></a>
+                <a href="#"><img src="img/logoyxpz_new.png" /></a>
+            </div>
+            <ul class="fl clearfix link_nav">
+            	<li class="fl one">
+                	<a href="#">娱乐</a>
+                	<a href="#">体育</a>
+                	<a href="#">资讯</a>
+                </li>
+            	<li class="fl two clearfix">
+                	<a href="#">电影</a>
+                	<a href="#">电视剧</a>
+                	<a href="#">片花</a>
+                	<a href="#">综艺</a>
+                	<a href="#">微电影</a>
+                	<a href="#">脱口秀</a>
+                </li>
+            	<li class="fl three clearfix">
+                	<a href="#">动漫</a>
+                	<a href="#">生活</a>
+                	<a href="#">少儿</a>
+                	<a href="#">母婴</a>
+                	<a href="#">游戏</a>
+                	<a href="#">健康</a>
+                </li>
+            	<li class="fl four clearfix">
+                	<a href="#">音乐</a>
+                	<a href="#">搞笑</a>
+                	<a href="#">时尚</a>
+                	<a href="#">原创</a>
+                	<a href="#">旅游</a>
+                	<a href="#">拍客</a>
+                </li>
+            	<li class="fl five clearfix">
+                	<a href="#">财经</a>
+                	<a href="#">军事</a>
+                	<a href="#">科技</a>
+                	<a href="#">教育</a>
+                	<a href="#">汽车</a>
+                	<a href="#">纪录片</a>
+                </li>
+            	<li class="fl six clearfix">
+                	<a href="#">风云榜</a>
+                	<a href="#">公益</a>
+                	<a href="#">全网影视</a>
+                	<a href="#">直播中心</a>
+                	<a href="#">爱奇艺搜索</a>
+                	<a href="#">爱奇艺出品</a>
+                </li>
+            	<li class="fl seven clearfix">
+                	<a href="#">PPS游戏</a>
+                	<a href="#">PPS奇秀</a>
+                	<a href="#">应用省电</a>
+                	<a href="#">VIP会员</a>
+                	<a href="#" class="shangcheng">爱奇艺商城
+                    	<i></i>
+                    </a>
+                	<a href="#" class="own">个人中心
+                    	<i class="you"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--today-->
+    <div class="today w clearfix">
+    	<div class="today_l fl">
+        	<div class="today_l_h clearfix">
+            	<h2 class="fl">今日焦点</h2>
+                <a href="#" class="fl more">更多&gt;</a>
+                <a href="#" class="fr dubo">
+                	<i class="fl"></i>
+                	<span class="fl">独播</span>
+                </a>
+            </div>
+            <div class="today_new">
+            	<a href="#" class="li_ke">北京市委副书记李珂涉严重违纪被查</a>
+                <ul>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl font">12306推出双验证方身份抢注</a>
+                        <a href="#" class="fl">埃及金字塔现诡异温差</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl font">12306推出双验证方身份抢注</a>
+                        <a href="#" class="fl">埃及金字塔现诡异温差</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl font">12306推出双验证方身份抢注</a>
+                        <a href="#" class="fl">埃及金字塔现诡异温差</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl font">12306推出双验证方身份抢注</a>
+                        <a href="#" class="fl">埃及金字塔现诡异温差</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl font">12306推出双验证方身份抢注</a>
+                        <a href="#" class="fl">埃及金字塔现诡异温差</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl font">12306推出双验证方身份抢注</a>
+                        <a href="#" class="fl">埃及金字塔现诡异温差</a>
+                    </li>
+                </ul>
+                <div class="snew clearfix">
+                	<div class="renxing fl first">
+                    	<a href="#"><img src="img/img1.png" /></a>
+                        <a href="#" class="tit">任性赛车断两截后如常行驶</a>
+                    </div>
+                	<div class="renxing fl fiest">
+                    	<a href="#"><img src="img/img1.png" /></a>
+                        <a href="#" class="tit">任性赛车断两截后如常行驶</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="today_m fl">
+        	<div class="toutiao">
+            	<a href="#"><img src="img/09c55a330c1745a2a85277a4b7853e60.jpg" /></a>
+                <div class="tit clearfix">
+                	<i class="fl"></i>
+                    <span class="fl">直播回顾:刘烨助阵中南影业发布会</span>
+                </div>
+            </div>
+            <ul class="today_new">
+                <li class="clearfix">
+                    <i class="fl"></i>
+                    <a href="#" class="fl">直播回顾:刘烨助阵中南影业发布会</a>
+                </li>
+                <li class="clearfix">
+                    <i class="fl"></i>
+                    <a href="#" class="fl">直播回顾:刘烨助阵中南影业发布会</a>
+                </li>
+                <li class="clearfix">
+                    <i class="fl"></i>
+                    <a href="#" class="fl">直播回顾:刘烨助阵中南影业发布会</a>
+                </li>
+                <li class="clearfix">
+                    <i class="fl"></i>
+                    <a href="#" class="fl">直播回顾:刘烨助阵中南影业发布会</a>
+                </li>
+                <li class="clearfix">
+                    <i class="fl"></i>
+                    <a href="#" class="fl">直播回顾:刘烨助阵中南影业发布会</a>
+                </li>
+            </ul>
+        </div>
+        <div class="today_r fl">
+             <div class="renxing">
+                  <a href="#"><img src="img/img1.png" /></a>
+                  <a href="#" class="tit">任性赛车断两截后如常行驶</a>
+              </div>
+              <div class="renxing ren2">
+                  <a href="#"><img src="img/img1.png" /></a>
+                  <a href="#" class="tit">任性赛车断两截后如常行驶</a>
+              </div>
+              <div class="renxing">
+                  <a href="#"><img src="img/img1.png" /></a>
+                  <a href="#" class="tit">任性赛车断两截后如常行驶</a>
+              </div>   	
+        </div>
+    </div>
+    <!--zongyi-->
+    <div class="zongyi w clearfix">
+    	<div class="zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">综艺</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <div class="fr">
+                	<a href="#"><img src="img/hongxing.png" /></a>
+                    <a href="#"><img src="img/queshi.png" /></a>
+                </div>
+            </div>
+            <ul class="clearfix zongyi_con">
+            	<li class="fl big">
+                	<a href="#"><img src="img/2996776d46504e8598ad3c9105a9f4dd.jpg" /></a>
+                    <div class="info">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                    <em></em>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                </li>
+                <li class="fl">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                </li>
+            </ul>
+        </div>
+        <div class="zongyi_r zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">精彩推荐</h2>
+                <a href="#" class="more fl">更多</a>
+            </div>
+            <div class="guanggun">
+            	<a href="#"><img src="img/a_100013279_m_601_180_101.jpg" /></a>
+            </div>
+            <div class="guanggun_new">
+            	<p>光棍节 恩爱秀多了也会腻</p>
+                <ul>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl">乔振宇跳中年迪斯科</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl">乔振宇跳中年迪斯科</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl">乔振宇跳中年迪斯科</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl">乔振宇跳中年迪斯科</a>
+                    </li>
+                	<li class="clearfix">
+                    	<i class="fl"></i>
+                        <a href="#" class="fl">乔振宇跳中年迪斯科</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--dubo-->
+    <div class="dubo w">
+    	<div class="dubo_h">
+        	<h2 class="fl">奔跑吧兄弟第三季</h2>
+            <span class="fl">独播</span>
+            <a href="#">进入专题&gt;</a>
+        </div>
+        <ul class="dubo_d">
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                	<a href="#">正片回顾</a>
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+                <i></i>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                	<a href="#">正片回顾</a>
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                	<a href="#">正片回顾</a>
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+                <i></i>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                	<a href="#">正片回顾</a>
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+                <i></i>
+            </li>
+        	<li class="fl last">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                	<a href="#">正片回顾</a>
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--talkshow-->
+    <div class="dubo w talkshow">
+    	<div class="dubo_h">
+        	<h2 class="fl">脱口秀</h2>
+            <a href="#" class="fl">进入专题&gt;</a>
+        </div>
+        <ul class="dubo_d">
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl last">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--ad-->
+    <div class="bad w">
+    	<a href="#"><img src="img/ad1.png" /></a>
+    </div>
+    <!--yule-->
+    <div class="zongyi w clearfix yule">
+    	<div class="zongyi_l fl">
+        	<div class="zongyi_l_h clearfix zuo">
+            	<i class="fl"></i>
+                <h2 class="fl">娱乐</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+            </div>
+            <ul class="clearfix zongyi_con">
+            	<li class="fl big">
+                	<a href="#"><img src="img/2996776d46504e8598ad3c9105a9f4dd.jpg" /></a>
+                    <div class="info">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fr">01:01</span>
+                    </div>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fr">01:01</span>
+                    </div>
+                </li>
+                <li class="fl">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">01:01</span>
+                    </div>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fr">01:01</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="zongyi_r zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+                <a href="#" class="fl"><img src="img/img4.png" /></a>
+            </div>
+            <div class="zhuanti">
+            	<a href="#"><img src="img/a_100013279_m_601_180_101.jpg" /></a>
+                <span>专题</span>
+            </div>
+            <div class="zhuanti_new">
+            	<a href="#">爱奇艺全球人气奖投票火热进行中 最新榜单</a>
+            </div>
+            <div class="zhuanti zhuanti_d">
+            	<a href="#"><img src="img/a_100013279_m_601_180_101.jpg" /></a>
+                <span>专题</span>
+            </div>
+            <div class="zhuanti_new">
+            	<a href="#">爱奇艺全球人气奖投票火热进行中 最新榜单</a>
+            </div>
+        </div>
+    </div>
+    <!--like-->
+    <div class="dubo w talkshow like">
+    	<div class="dubo_h">
+        	<h2 class="fl">猜你喜欢</h2>
+            <a href="#" class="fl">进入专题&gt;</a>
+        </div>
+        <ul class="dubo_d">
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl last">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+        	<li class="fl">
+            	<a href="#"><img src="img/img1.png" /></a>
+                <div class="tit">
+                    <span>前方高能！路人答跑男烧脑题</span>
+                </div>
+                <div class="huazhi clearfix">
+                	<span class="fl">1080P</span>
+                	<span class="fr">11-6期</span>
+                </div>
+            </li>
+            <li class="fl last in">
+            	<a href="#">进入个人中心&gt;</a>
+            </li>
+        </ul>
+    </div>
+    <!--tuiguang-->
+    <div class="tuiguang w">
+    	<p>推广广告</p>
+        <div class="clearfix">
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+            <a href="#" class="prev"><img src="img/icon1.png" /></a>
+            <a href="#" class="next"><img src="img/icon2.png" /></a>
+        </div>
+        
+    </div>
+    <!--movie-->
+    <div class="zongyi w clearfix">
+    	<div class="zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">电影</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+            </div>
+            <ul class="movie clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="zongyi_r zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">电影榜</h2>
+                <a href="#" class="more fl">更多</a>
+            </div>
+            <ul class="movie_r">
+            	<li class="clearfix">
+                	<span class="fl font">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl font">2</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl font">3</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">4</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">5</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">6</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">7</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">8</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">9</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            </ul>
+            <div class="movie movie_r_d">
+                <a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                <div class="movie_d">
+                    <h6>情剑</h6>
+                    <span>情剑情剑情剑情剑情剑</span>
+                    <i>6.7</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--mv-->
+    <div class="mv w clearfix">
+    	<div class="mv_l fl">
+        	<div class="mv_l_h clearfix">
+            	<h2 class="fl">微电影</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl">第二节深圳国际微电影节</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">第二节深圳国际微电影节</a>
+            </div>
+            <ul class="movie_l_d clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl last">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    	<div class="mv_l mv_r fl">
+        	<div class="mv_l_h clearfix">
+            	<h2 class="fl">片花</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl">007系列回顾</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">007系列回顾</a>
+            </div>
+            <ul class="movie_l_d clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl last">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--disnshiju-->
+    <div class="zongyi w clearfix">
+    	<div class="zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">电视剧</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+            </div>
+            <ul class="movie clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                    <div class="movie_d">
+                    	<h6>情剑</h6>
+                        <span>情剑情剑情剑情剑情剑</span>
+                        <i>6.7</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="zongyi_r zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">电视剧榜</h2>
+                <a href="#" class="more fl">更多</a>
+            </div>
+            <ul class="movie_r">
+            	<li class="clearfix">
+                	<span class="fl font">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl font">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl font">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            	<li class="clearfix">
+                	<span class="fl">1</span>
+                    <a href="#" class="fl">坏姐姐之拆婚联盟</a>
+                    <i class="fr"></i>
+                </li>
+            </ul>
+            <div class="movie movie_r_d">
+                <a href="#"><img src="img/a_100013284_m_601_180_236.jpg" /></a>
+                <div class="movie_d">
+                    <h6>情剑</h6>
+                    <span>情剑情剑情剑情剑情剑</span>
+                    <i>6.7</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--tuiguang-->
+    <div class="tuiguang w tuiguang2">
+    	<p>推广广告</p>
+        <div class="clearfix">
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+        	<a href="#" class="fl"><img src="img/img5.png" /></a>
+            <a href="#" class="prev"><img src="img/icon1.png" /></a>
+            <a href="#" class="next"><img src="img/icon2.png" /></a>
+        </div>
+        
+    </div>
+    <!--cartoon-->
+    <div class="cartoon w clearfix">
+    	<div class="fl dongman">
+        	<div class="dongman_h">
+            	<i class="fl"></i>
+            	<h2 class="fl">动漫</h2>
+                <a href="#" class="fl more">更多&gt;</a>
+                <a href="#" class="fl">真人摄影</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">动画电影</a>
+            </div>
+            <ul class="clearfix dongman_d">
+            	<li class="fl big">
+                	<a href="#"><img src="img/09c55a330c1745a2a85277a4b7853e60.jpg" /></a>
+                    <div>
+                    	<a href="#">海贼王</a>
+                    </div>
+                </li>
+            	<li class="fl small">
+                	<a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                    <div>
+                    	<a href="#">海贼王</a>
+                    </div>
+                </li>
+            	<li class="fl small">
+                	<a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                    <div>
+                    	<a href="#">海贼王</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    	<div class="fl dongman shaoer">
+        	<div class="dongman_h">
+            	<i class="fl"></i>
+            	<h2 class="fl">少儿</h2>
+                <a href="#" class="fl more">更多&gt;</a>
+            </div>
+            <ul class="clearfix dongman_d">
+            	<li class="fl small">
+                	<a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                    <div>
+                    	<a href="#">海贼王</a>
+                    </div>
+                </li>
+            	<li class="fl small">
+                	<a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                    <div>
+                    	<a href="#">海贼王</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    	<div class="fl dongman shaoer">
+        	<div class="dongman_h">
+            	<i class="fl"></i>
+            	<h2 class="fl">教育</h2>
+                <a href="#" class="fl more">更多&gt;</a>
+            </div>
+            <ul class="clearfix dongman_d">
+            	<li class="fl small">
+                	<a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                    <div>
+                    	<a href="#">海贼王</a>
+                    </div>
+                </li>
+            	<li class="fl small">
+                	<a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                    <div>
+                    	<a href="#">海贼王</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--pe-->
+    <div class="cartoon w clearfix pe">
+        <div class="fl dongman pe_l">
+                <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">体育</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                    <a href="#" class="fl">足球</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">篮球</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">美网</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">昆仑决</a>
+                </div>
+                <ul class="clearfix dongman_d">
+                    <li class="fl small">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                    <li class="fl small">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <div class="fl dongman shaoer pe_m">
+                <div class="dongman_h clearfix aqiy">
+                    <i class="fl"></i>
+                    <h2 class="fl">音乐</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                    <a href="#" class="fl">爱奇艺音乐吧</a>
+                </div>
+                <ul class="clearfix dongman_d">
+                	<li class="small fl">
+                        <a href="#"><img src="img/img6.png"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>	
+                    </li>
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <div class="fl dongman shaoer pe_r">
+                <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">时尚</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                </div>
+                <ul class="clearfix dongman_d">
+                    <li class="fl small">
+                        <a href="#"><img src="img/img6.png"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>	
+    <!--muying-->
+    <div class="cartoon w clearfix pe">
+        <div class="fl dongman pe_l">
+            <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">母婴</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                    <a href="#" class="fl">足球</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">分娩时刻</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">早教课堂</a>
+                </div>
+            <ul class="clearfix dongman_d">
+                    <li class="fl small">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        <div class="fl dongman shaoer pe_m">
+            <div class="dongman_h clearfix">
+                <i class="fl"></i>
+                <h2 class="fl">生活</h2>
+                <a href="#" class="fl more">更多&gt;</a>
+                <a href="#" class="fl">健身季</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">健身季</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">健身季</a>
+            </div>
+            <ul class="clearfix dongman_d">
+                 <li class="fl small last">
+                     <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                     <div>
+                         <a href="#">海贼王</a>
+                     </div>
+                 </li>
+                 <li class="fl small last">
+                     <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                     <div>
+                         <a href="#">海贼王</a>
+                     </div>
+                 </li>
+            </ul>
+        </div>
+        <div class="fl dongman shaoer pe_r">
+                <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">健康</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                </div>
+                <ul class="clearfix dongman_d">
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <!--keji-->
+    <div class="cartoon w clearfix pe">
+        <div class="fl dongman pe_l">
+            <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">科技</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                    <a href="#" class="fl">足球</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">分娩时刻</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">早教课堂</a>
+                </div>
+            <ul class="clearfix dongman_d">
+                    <li class="fl small">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        <div class="fl dongman shaoer pe_m">
+            <div class="dongman_h clearfix">
+                <i class="fl"></i>
+                <h2 class="fl">汽车</h2>
+                <a href="#" class="fl more">更多&gt;</a>
+                <a href="#" class="fl">健身季</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">健身季</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">健身季</a>
+            </div>
+            <ul class="clearfix dongman_d">
+                 <li class="fl small last">
+                     <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                     <div>
+                         <a href="#">海贼王</a>
+                     </div>
+                 </li>
+                 <li class="fl small last">
+                     <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                     <div>
+                         <a href="#">海贼王</a>
+                     </div>
+                 </li>
+            </ul>
+        </div>
+        <div class="fl dongman shaoer pe_r">
+                <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">财经</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                </div>
+                <ul class="clearfix dongman_d">
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <!--lvyou-->
+    <div class="cartoon w clearfix pe">
+        <div class="fl dongman pe_l">
+            <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">旅游</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                    <a href="#" class="fl">足球</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">分娩时刻</a>
+                    <span class="fl"></span>
+                    <a href="#" class="fl">早教课堂</a>
+                </div>
+            <ul class="clearfix dongman_d">
+                    <li class="fl small">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        <div class="fl dongman shaoer pe_m">
+            <div class="dongman_h clearfix">
+                <i class="fl"></i>
+                <h2 class="fl">纪录片</h2>
+                <a href="#" class="fl more">更多&gt;</a>
+                <a href="#" class="fl">健身季</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">健身季</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">健身季</a>
+            </div>
+            <ul class="clearfix dongman_d">
+                 <li class="fl small last">
+                     <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                     <div>
+                         <a href="#">海贼王</a>
+                     </div>
+                 </li>
+                 <li class="fl small last">
+                     <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                     <div>
+                         <a href="#">海贼王</a>
+                     </div>
+                 </li>
+            </ul>
+        </div>
+        <div class="fl dongman shaoer pe_r">
+                <div class="dongman_h">
+                    <i class="fl"></i>
+                    <h2 class="fl">军事</h2>
+                    <a href="#" class="fl more">更多&gt;</a>
+                </div>
+                <ul class="clearfix dongman_d">
+                    <li class="fl small last">
+                        <a href="#"><img src="img/ff0b672231c146bd8a3e961bed903152.jpg"/></a>
+                        <div>
+                            <a href="#">海贼王</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <!--yuanchuang-->
+    <div class="zongyi w clearfix">
+    	<div class="zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">原创</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+                <span class="fl"></span>
+                <a href="#" class="fl tv">爱上超模</a>
+            </div>
+            <ul class="clearfix zongyi_con">
+            	<li class="fl big">
+                	<a href="#"><img src="img/2996776d46504e8598ad3c9105a9f4dd.jpg" /></a>
+                    <div class="info">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                    <em></em>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                </li>
+                <li class="fl">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fl">1080P</span>
+                    	<span class="fr">11-09期</span>
+                    </div>
+                </li>
+                <li class="fl zizhi">
+                	<a href="#"><img src="img/img.png" /></a>
+                    <div class="info sma">
+                    	<p>非首脑会谈</p>
+                        <a href="#">各国富二代生活大揭秘</a>
+                    </div>
+                    <div class="qi clearfix huamian">
+                    	<span class="fr">11-09期</span>
+                    </div>
+                    <i></i>
+                </li>
+            </ul>
+        </div>
+        <div class="zongyi_r zongyi_l fl">
+        	<div class="zongyi_l_h clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">原创达人</h2>
+                <a href="#" class="more fl">更多</a>
+            </div>
+            <ul class="dingyue">
+            	<li class="clearfix">
+                	<a href="#" class="fl"><img src="img/img7.png" /></a>
+                    <div class="fl">
+                    	<p>点星人视频</p>
+                        <span>2000人已订阅</span>
+                        <a href="#" class="ding">+订阅</a>
+                    </div>
+                </li>
+            	<li class="clearfix">
+                	<a href="#" class="fl"><img src="img/img7.png" /></a>
+                    <div class="fl">
+                    	<p>点星人视频</p>
+                        <span>2000人已订阅</span>
+                        <a href="#" class="ding">+订阅</a>
+                    </div>
+                </li>
+            	<li class="clearfix">
+                	<a href="#" class="fl"><img src="img/img7.png" /></a>
+                    <div class="fl">
+                    	<p>点星人视频</p>
+                        <span>2000人已订阅</span>
+                        <a href="#" class="ding">+订阅</a>
+                    </div>
+                </li>
+            	<li class="clearfix">
+                	<a href="#" class="fl"><img src="img/img7.png" /></a>
+                    <div class="fl">
+                    	<p>点星人视频</p>
+                        <span>2000人已订阅</span>
+                        <a href="#" class="ding">+订阅</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--gaoxiao-->
+    <div class="mv w clearfix">
+    	<div class="mv_l fl">
+        	<div class="mv_l_h clearfix">
+            	<h2 class="fl">搞笑</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl">欢乐精选</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">笑霸来了</a>
+            </div>
+            <ul class="movie_l_d clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl last">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    	<div class="mv_l mv_r fl">
+        	<div class="mv_l_h clearfix">
+            	<h2 class="fl">拍客</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl">粉丝频道</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">七嘴八舌</a>
+            </div>
+            <ul class="movie_l_d clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl last">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--youxi-->
+    <div class="mv w clearfix youxi">
+    	<div class="mv_l fl">
+        	<div class="mv_l_h clearfix">
+            	<i class="fl"></i>
+            	<h2 class="fl">游戏</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl">我的世界</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">秀你一脸</a>
+            </div>
+            <ul class="movie_l_d clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl last">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    	<div class="mv_l mv_r fl">
+        	<div class="mv_l_h clearfix">
+            	<i class="fl"></i>
+            	<h2 class="fl">PPS奇秀</h2>
+                <a href="#" class="more fl">更多&gt;</a>
+                <a href="#" class="fl">奇秀新星</a>
+                <span class="fl"></span>
+                <a href="#" class="fl">美女</a>
+            </div>
+            <ul class="movie_l_d clearfix">
+            	<li class="fl">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            	<li class="fl last">
+                	<a href="#"><img src="img/a_100009826_m_601_m7_180_101.jpg" /></a>
+                    <div>
+                    	<a href="#">冒险穷三代刺激毁一生</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--pindao-->
+    <ul class="w pindao clearfix">
+    	<li class="fl">
+        	<a href="#"><img src="img/img8.png" /></a>
+            <div>
+            	<span>公益频道</span>
+                <a href="#">更多&gt;</a>
+            </div>
+            <div class="info">那个叫自来也的男人死了</div>
+        </li>
+    	<li class="fl">
+        	<a href="#"><img src="img/img8.png" /></a>
+            <div>
+            	<span>公益频道</span>
+                <a href="#">更多&gt;</a>
+            </div>
+            <div class="info">那个叫自来也的男人死了</div>
+        </li>
+    	<li class="fl">
+        	<a href="#"><img src="img/img8.png" /></a>
+            <div>
+            	<span>公益频道</span>
+                <a href="#">更多&gt;</a>
+            </div>
+            <div class="info">那个叫自来也的男人死了</div>
+        </li>
+    	<li class="fl">
+        	<a href="#"><img src="img/img8.png" /></a>
+            <div>
+            	<span>公益频道</span>
+                <a href="#">更多&gt;</a>
+            </div>
+            <div class="info">那个叫自来也的男人死了</div>
+        </li>
+    	<li class="fl last">
+        	<a href="#"><img src="img/img8.png" /></a>
+            <div>
+            	<span>公益频道</span>
+                <a href="#">更多&gt;</a>
+            </div>
+            <div class="info">那个叫自来也的男人死了</div>
+        </li>
+    </ul>
+	<!--尾巴根-->
+    <div class="w foot clearfix">
+        <div class="fl f_left">
+            <div class="ff_t clearfix">
+                <h2 class="fl">合作伙伴</h2>
+                <a href="#" class="fl">更多&gt;</a>
+            </div>
+            <div class="clearfix parter">
+                <a href="#" >万达电影网</a>
+                <a href="#">华谊兄弟</a>
+                <a href="#">星美</a>
+                <a href="#">光线影业</a>
+                <a href="#">电影网</a>
+                <a href="#">华策影视</a>
+                <a href="#">百老汇</a>
+                <a href="#">百度视频</a>
+                <a href="#">百度百科</a>
+                <a href="#">hao123</a>
+                <a href="#">百度V计划</a>
+                <a href="#">央广视讯</a>
+                <a href="#">华录百纳</a>
+                <a href="#">百度贴吧</a>
+                <a href="#">爱奇艺天猫店</a>
+                <a href="#">智能电视网</a>
+            </div>
+        </div>
+        <div class="fl f_right">
+            <div class="ff_t clearfix">
+                <h2 class="fl">爱奇艺动态</h2>
+                <a href="#" class="fl">更多&gt;</a>
+            </div>
+            <div class="clearfix dongtai">
+                <a href="#" class="fl">爱奇艺发布音频水印技术</a>
+                <a href="#" class="fl">爱奇艺发布音频水印技术</a>
+                <a href="#" class="fl">爱奇艺发布音频水印技术</a>
+                <a href="#" class="fl">爱奇艺发布音频水印技术</a>
+                <a href="#" class="fl">爱奇艺发布音频水印技术</a>
+                <a href="#" class="fl">爱奇艺发布音频水印技术</a>
+            </div>
+        </div>
+    </div>
+    <!--larger_line-->
+    <div class="larger_line"></div>
+	<!--尾巴尖-->
+	<div class="w foter">
+    	<p class="jshao"><a href="#">公司介绍</a>|<a href="#">新闻动态</a>|<a href="#">联系方式</a>|<a href="#">招聘英才</a>|<a href="#">爱奇艺实验室</a>|<a href="#">开放平台</a>|<a href="#">应用商店</a>|<a href="#">爱奇艺论坛</a>|<a href="#">帮助与反馈</a>|<a href="#">侵权投诉</a>|<a href="#">About Us</a></p>
+        <div class="clearfix jbao"><span class="fl">违法和不良信息举报电话：400-923-7171</span><span class="fr">举报邮箱：jubao365@qiyi.com</span></div>
+        <div class="clearfix zhengj">
+        	<a href="#" class="fl">京网文[2015]0652-282号-1</a>
+            <a href="#" class="fl clearfix"><i class="fl one"></i><span class="fl">中国互联网诚信联盟</span></a>
+            <a href="#" class="fl clearfix"><i class="fl two"></i><span class="fl">中国互联网举报中心 </span></a>
+            <a href="#" class="fl">信息网络传播视听节目许可证 0110544号</a>
+            <a href="#" class="fl">广播电视节目制作经营许可证 (京)字第1938号</a>
+        </div>
+        <div class="clearfix zhengj zige">
+        	<a href="#" class="fl ts">京ICP证110636号</a>
+            <a href="#" class="fl clearfix"><i class="fl three"></i><span class="fl">经营性网站备案信息</span></a>
+            <a href="#" class="fl">京公网安备 11010802010263号</a>
+            <a href="#" class="fl">增值电信业务经营许可证 B2-20120273</a>
+            <a href="#" class="fl">互联网药品信息服务资格证书 (京)-经营性-2013-0012</a>
+         </div>
+        <p class="jshao">Copyright © 2016 爱奇艺  All Rights Reserved</p>
+    </div> 
+</body>
+</html>

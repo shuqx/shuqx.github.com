@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+@charset "utf-8";
+/*foot.css*/
+.foot{ width:100%; padding-top:24px; padding-bottom:54px; text-align:center; line-height:14px; font-family:'微软雅黑'; color:#666;}
+.foot p{ margin-bottom:16px;}
+.foot a{ color:#666; padding:0 4px;}
+.foot a:hover{ color:#fd8d4e;}
+.fixed{ width:54px; height:54px; background:url(../imges/fixed_bg.png) no-repeat 0 -108px; position:fixed; right:0; bottom:100px; cursor:pointer; display:none;_position:absolute; _top:0px;_right:0px; z-index:99999;}
+
+
+
+
+

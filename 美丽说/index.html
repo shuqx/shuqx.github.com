@@ -1,0 +1,1952 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/head.css"/>
+<link rel="stylesheet" href="css/body.css"/>
+<link rel="stylesheet" href="css/foot.css"/>
+<script>
+function Tab(id1,id2,id3,id4,id5){
+	this.oBanner=document.getElementById(id5);
+	this.oLeft=document.getElementById(id3);
+	this.oRight=document.getElementById(id4);
+	this.oUl1=document.getElementById(id1);
+	this.aBtn=this.oUl1.children;
+	this.oUl2=document.getElementById(id2);
+	this.aLi=this.oUl2.children;
+	this.timer=null;
+	this.duration=2000;
+	this.iNow=0;
+	this.init();		
+}
+
+Tab.prototype.open=function(){
+	var _this=this;
+	clearInterval(this.timer);
+	this.timer=setInterval(function(){
+		_this.iNow++;
+		_this.show(_this.iNow);		
+	},this.duration);	
+};
+Tab.prototype.close=function(){
+	clearInterval(this.timer);	
+};
+Tab.prototype.next=function(){
+	var _this=this;
+	this.oLeft.onclick=function(){
+		_this.iNow--;
+		_this.show(_this.iNow);
+		return false;	
+	};	
+};
+Tab.prototype.prev=function(){
+	var _this=this;
+	this.oRight.onclick=function(){
+		_this.iNow++;
+		_this.show(_this.iNow);
+		return false;	
+	};	
+};
+Tab.prototype.init=function(){
+	var _this=this;
+	this.next();
+	this.prev();
+	this.open();
+	this.oBanner.onmouseover=function(){
+		_this.close();	
+	};
+	this.oBanner.onmouseout=function(){
+		_this.open();	
+	};
+	for(var i=0;i<this.aBtn.length;i++){
+		(function(index){
+			_this.aBtn[i].onclick=function(){
+				_this.iNow=(_this.iNow%_this.aBtn.length)*_this.aBtn.length+index;
+				_this.show(_this.iNow);	
+			};	
+		})(i);	
+	}	
+};
+
+Tab.prototype.show=function(index){
+	for(var i=0;i<this.aBtn.length;i++){
+		this.aBtn[i].className='fl';
+		this.aLi[i].className='';	
+	}
+	this.aBtn[[index%this.aBtn.length+this.aBtn.length]%this.aBtn.length].className='fl active';
+	this.aLi[[index%this.aBtn.length+this.aBtn.length]%this.aBtn.length].className='z-index';	
+};
+
+
+window.onload=function(){
+	new Tab('ul1','ul2','left','right','img');	
+};
+</script>
+
+</head>
+
+<body>
+<div class="loginbar">
+     <div class="clearfix">
+        <ul class="fr login_box">
+           <li class="fl">
+              <a href="#" class="a1">微信登录</a>
+           </li>
+           <li class="fl">
+              <a href="#" class="a2">
+              	QQ登录
+                <i class="i1"></i>
+              </a>
+           </li>
+           <li class="fl">
+              <a href="#" class="a3">
+              	登录
+              </a>
+           </li>
+           <li class="fl">
+              <a href="#" class="a3">
+              	注册
+              </a>
+           </li>
+           <li class="fl">
+              <a href="#" class="a4">
+              	我的购物车
+                <i class="i2"></i>
+                <span class="zeo">0</span>
+              </a>
+           </li>
+           <li class="fl">
+              <a href="#" class="a5">
+              	我的订单
+                <i class="i3"></i>
+              </a>
+           </li>
+           <li class="fl">
+              <a href="#" class="a6">
+              	下载APP
+                <i class="i4"></i>
+              </a>
+           </li>
+           <li class="fl">
+              <a href="#" class="a7">
+                帮助中心
+              </a>
+           </li>
+        </ul>
+     </div>
+  </div>
+  <div class="column">
+     <div class="clearfix">
+        <a href="#" class="menu fl">
+           主会场
+           <i></i>
+        </a>
+        <ul class="nav fl">
+           <li class="fl">
+             <a href="#">美术馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">美衣裙
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">女裙馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">女鞋馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">包包馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">家局馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">配饰馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">美妆馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">团购馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#">韩国馆
+             </a>
+           </li>
+           <li class="fl">
+             <a href="#" class="a2">查看我的优惠券
+             </a>
+           </li>
+           <li class="fr">
+             <a href="#" class="a1"><img src="img/4.png" /></a>
+           </li>
+        </ul>
+     </div>
+  </div>
+  <div class="logo clearfix">
+     <h1 class="fl" id="logo">
+        <a href="#">美丽说</a>
+     </h1>
+     <div class="search fl">
+        <div class="fl name">
+           <p class="sear_top">宝贝
+              <i class="jiao"></i>
+           </p>
+           <ul class="show">
+              <li><a href="#">商家</a></li>
+              <li><a href="#">杂志</a></li>
+              <li><a href="#">用户</a></li>
+           </ul>
+           <span class="white"></span>
+        </div>
+        <b class="pick fl"></b>
+        <input type="text" placeholder="318最美春装节全场6折，快来买吧！" class="fl btn1"/>
+        <input type="button" value="搜索"  class="fr btn2"/>
+     </div>
+    <!-- <audio src="../music/陈奕迅-单车.mp3" class="fr" style="width:1px; height:1px;"></audio>-->
+  </div>
+  <div class="new_nav">
+    <div class="box">
+     <ul class="clearfix">
+        <li class="fl"><a href="#">首页</a></li>
+        <li class="fl"><a href="#">今日最热</a></li>
+        <li class="fl"><a href="#">衣服<i></i></a></li>
+        <li class="fl"><a href="#">鞋子</a></li>
+        <li class="fl"><a href="#">包包</a></li>
+        <li class="fl"><a href="#">配饰</a></li>
+        <li class="fl"><a href="#">家居</a></li>
+        <li class="fl"><a href="#">美妆</a></li>
+        <li class="fl"><a href="#">特卖</a></li>
+        <li class="fl"><a href="#">团购</a></li>
+        <li class="fl"><a href="#">好店</a></li>
+        <li class="fl"><a href="#">杂志</a></li>
+        <li class="fl"><a href="#">福利社<i></i></a></li>
+     </ul>
+    </div> 
+  </div>
+  <div class="banner" id="img">
+     <ul class="show-box" id="ul2">
+        <li class="z-index">
+           <a href="#" class="show1"></a>
+        </li>
+        <li>
+           <a href="#" class="show2"></a>
+        </li>
+        <li>
+           <a href="#" class="show3"></a>
+        </li>
+        <li>
+           <a href="#" class="show4"></a>
+        </li>
+        <li>
+           <a href="#" class="show5"></a>
+        </li>
+        <li>
+           <a href="#" class="show6"></a>
+        </li>
+        <li>
+           <a href="#" class="show7"></a>
+        </li>
+        <li>
+           <a href="#" class="show8"></a>
+        </li>
+        <li>
+           <a href="#" class="show9"></a>
+        </li>
+     </ul>
+  </div>
+  <div class="list" id="btn">
+    <ul class="left fl">
+        <li>
+            <h3 class="p1">最热</h3>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">早春新款</a>
+              <a href="#" class="fl">T恤</a>
+              <a href="#" class="fl">活力运动鞋</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl">连衣裙</a>
+              <a href="#" class="fl red">至in牛仔裤</a>
+              <a href="#" class="fl">单肩包</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl">外套</a>
+              <a href="#" class="fl">甜美小单鞋</a>
+              <a href="#" class="fl red">超人气套装</a>
+            </p>
+            <span class="cao">></span>
+            <div class="cut">
+            	<dl class="clearfix">
+                   <dt>春季新品</dt>
+                   <dd class="fl"><a href="#">运动鞋</a></dd>
+                   <dd class="fl"><a href="#">单鞋</a></dd>
+                   <dd class="fl"><a href="#">早春鞋履</a></dd>
+                   <dd class="fl"><a href="#">高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">帆布鞋</a></dd>
+                   <dd class="fl"><a href="#">短靴</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>买手推荐</dt>
+                   <dd class="fl"><a href="#">厚底运动鞋</a></dd>
+                   <dd class="fl"><a href="#">马丁靴</a></dd>
+                   <dd class="fl"><a href="#">切尔西靴</a></dd>
+                   <dd class="fl"><a href="#">细跟高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">平底单鞋</a></dd>
+                   <dd class="fl"><a href="#">潮流热卖</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>亲民潮款</dt>
+                   <dd class="fl"><a href="#">豆豆鞋</a></dd>
+                   <dd class="fl"><a href="#">松糕鞋</a></dd>
+                   <dd class="fl"><a href="#">高帮鞋</a></dd>
+                   <dd class="fl"><a href="#">裸带鞋</a></dd>
+                   <dd class="fl"><a href="#">优质热销鞋履</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>穿搭必备</dt>
+                   <dd class="fl"><a href="#">厚底鞋</a></dd>
+                   <dd class="fl"><a href="#">平底鞋</a></dd>
+                   <dd class="fl"><a href="#">粗跟鞋</a></dd>
+                   <dd class="fl"><a href="#">尖头鞋</a></dd>
+                   <dd class="fl"><a href="#">乐福鞋</a></dd>
+                   <dd class="fl"><a href="#">休闲鞋</a></dd>
+                </dl>
+               <span class="bse1"></span>
+               <span class="bse2"></span>
+               <span class="bse3"></span>
+            </div>
+        </li>
+        <li>
+            <h3 class="p3">衣服</h3>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">卫衣</a>
+              <a href="#" class="fl">开衫</a>
+              <a href="#" class="fl">大衣</a>
+              <a href="#" class="fl red">连衣裙</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">牛仔裤</a>
+              <a href="#" class="fl">半身裙</a>
+              <a href="#" class="fl">小裤脚</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl">打底裤</a>
+              <a href="#" class="fl">打底衫</a>
+              <a href="#" class="fl">情侣装</a>
+            </p>
+            <span class="cao">></span>
+            <div class="cut">
+            	<dl class="clearfix">
+                   <dt>春季新品</dt>
+                   <dd class="fl"><a href="#">运动鞋</a></dd>
+                   <dd class="fl"><a href="#">单鞋</a></dd>
+                   <dd class="fl"><a href="#">早春鞋履</a></dd>
+                   <dd class="fl"><a href="#">高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">帆布鞋</a></dd>
+                   <dd class="fl"><a href="#">短靴</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>买手推荐</dt>
+                   <dd class="fl"><a href="#">厚底运动鞋</a></dd>
+                   <dd class="fl"><a href="#">马丁靴</a></dd>
+                   <dd class="fl"><a href="#">切尔西靴</a></dd>
+                   <dd class="fl"><a href="#">细跟高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">平底单鞋</a></dd>
+                   <dd class="fl"><a href="#">潮流热卖</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>亲民潮款</dt>
+                   <dd class="fl"><a href="#">豆豆鞋</a></dd>
+                   <dd class="fl"><a href="#">松糕鞋</a></dd>
+                   <dd class="fl"><a href="#">高帮鞋</a></dd>
+                   <dd class="fl"><a href="#">裸带鞋</a></dd>
+                   <dd class="fl"><a href="#">优质热销鞋履</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>穿搭必备</dt>
+                   <dd class="fl"><a href="#">厚底鞋</a></dd>
+                   <dd class="fl"><a href="#">平底鞋</a></dd>
+                   <dd class="fl"><a href="#">粗跟鞋</a></dd>
+                   <dd class="fl"><a href="#">尖头鞋</a></dd>
+                   <dd class="fl"><a href="#">乐福鞋</a></dd>
+                   <dd class="fl"><a href="#">休闲鞋</a></dd>
+                </dl>
+               <span class="bse1"></span>
+               <span class="bse2"></span>
+               <span class="bse3"></span>
+            </div>
+        </li>
+        <li>
+            <h3 class="p4">鞋子</h3>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">运动鞋</a>
+              <a href="#" class="fl red">早春鞋履</a>
+              <a href="#" class="fl">短靴</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">高跟鞋</a>
+              <a href="#" class="fl">帆布鞋</a>
+              <a href="#" class="fl">平底鞋</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl">优质热销鞋履</a>
+              <a href="#" class="fl">马丁靴</a>
+            </p>
+            <span class="cao">></span>
+            <div class="cut">
+            	<dl class="clearfix">
+                   <dt>春季新品</dt>
+                   <dd class="fl"><a href="#">运动鞋</a></dd>
+                   <dd class="fl"><a href="#">单鞋</a></dd>
+                   <dd class="fl"><a href="#">早春鞋履</a></dd>
+                   <dd class="fl"><a href="#">高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">帆布鞋</a></dd>
+                   <dd class="fl"><a href="#">短靴</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>买手推荐</dt>
+                   <dd class="fl"><a href="#">厚底运动鞋</a></dd>
+                   <dd class="fl"><a href="#">马丁靴</a></dd>
+                   <dd class="fl"><a href="#">切尔西靴</a></dd>
+                   <dd class="fl"><a href="#">细跟高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">平底单鞋</a></dd>
+                   <dd class="fl"><a href="#">潮流热卖</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>亲民潮款</dt>
+                   <dd class="fl"><a href="#">豆豆鞋</a></dd>
+                   <dd class="fl"><a href="#">松糕鞋</a></dd>
+                   <dd class="fl"><a href="#">高帮鞋</a></dd>
+                   <dd class="fl"><a href="#">裸带鞋</a></dd>
+                   <dd class="fl"><a href="#">优质热销鞋履</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>穿搭必备</dt>
+                   <dd class="fl"><a href="#">厚底鞋</a></dd>
+                   <dd class="fl"><a href="#">平底鞋</a></dd>
+                   <dd class="fl"><a href="#">粗跟鞋</a></dd>
+                   <dd class="fl"><a href="#">尖头鞋</a></dd>
+                   <dd class="fl"><a href="#">乐福鞋</a></dd>
+                   <dd class="fl"><a href="#">休闲鞋</a></dd>
+                </dl>
+               <span class="bse1"></span>
+               <span class="bse2"></span>
+               <span class="bse3"></span>
+            </div>
+        </li>
+        <li>
+            <h3 class="p5">包包</h3>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">运动鞋</a>
+              <a href="#" class="fl red">早春鞋履</a>
+              <a href="#" class="fl">短靴</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">高跟鞋</a>
+              <a href="#" class="fl">帆布鞋</a>
+              <a href="#" class="fl">平底鞋</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">手拿包</a>
+              <a href="#" class="fl">行李箱</a>
+              <a href="#" class="fl">学院双肩包</a>
+            </p>
+            <span class="cao">></span>
+            <div class="cut">
+            	<dl class="clearfix">
+                   <dt>春季新品</dt>
+                   <dd class="fl"><a href="#">运动鞋</a></dd>
+                   <dd class="fl"><a href="#">单鞋</a></dd>
+                   <dd class="fl"><a href="#">早春鞋履</a></dd>
+                   <dd class="fl"><a href="#">高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">帆布鞋</a></dd>
+                   <dd class="fl"><a href="#">短靴</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>买手推荐</dt>
+                   <dd class="fl"><a href="#">厚底运动鞋</a></dd>
+                   <dd class="fl"><a href="#">马丁靴</a></dd>
+                   <dd class="fl"><a href="#">切尔西靴</a></dd>
+                   <dd class="fl"><a href="#">细跟高跟鞋</a></dd>
+                   <dd class="fl"><a href="#">平底单鞋</a></dd>
+                   <dd class="fl"><a href="#">潮流热卖</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>亲民潮款</dt>
+                   <dd class="fl"><a href="#">豆豆鞋</a></dd>
+                   <dd class="fl"><a href="#">松糕鞋</a></dd>
+                   <dd class="fl"><a href="#">高帮鞋</a></dd>
+                   <dd class="fl"><a href="#">裸带鞋</a></dd>
+                   <dd class="fl"><a href="#">优质热销鞋履</a></dd>
+                </dl>
+                <dl class="clearfix">
+                   <dt>穿搭必备</dt>
+                   <dd class="fl"><a href="#">厚底鞋</a></dd>
+                   <dd class="fl"><a href="#">平底鞋</a></dd>
+                   <dd class="fl"><a href="#">粗跟鞋</a></dd>
+                   <dd class="fl"><a href="#">尖头鞋</a></dd>
+                   <dd class="fl"><a href="#">乐福鞋</a></dd>
+                   <dd class="fl"><a href="#">休闲鞋</a></dd>
+                </dl>
+               <span class="bse1"></span>
+               <span class="bse2"></span>
+               <span class="bse3"></span>
+            </div>
+        </li>
+        <li class="li">
+            <h3 class="p6">配饰</h3>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">运动鞋</a>
+              <a href="#" class="fl red">早春鞋履</a>
+              <a href="#" class="fl">短靴</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl red">高跟鞋</a>
+              <a href="#" class="fl">帆布鞋</a>
+              <a href="#" class="fl">平底鞋</a>
+            </p>
+            <p class="clearfix p2">
+              <a href="#" class="fl">袜子</a>
+              <a href="#" class="fl">丝巾</a>
+              <a href="#" class="fl red">腰带</a>
+            </p>
+            <span class="cao">></span>
+        </li>
+    </ul>
+    <ul class="right fr">
+       <li style=" border-bottom:1px solid #dfdfdf;">
+          <a href="#" style="display:block;"><img src="img/c1.jpg" /></a>
+       </li>
+       <li style=" border-bottom:1px solid #dfdfdf;">
+          <a href="#" style="display:block;"><img src="img/c2.jpg" /></a>
+       </li>
+       <li style=" border-bottom:1px solid #dfdfdf;">
+          <a href="#" style="display:block;"><img src="img/c3.jpg" /></a>
+       </li>
+    </ul>
+    <ul class="bottom clearfix" style=" padding-left:1px;">
+       <li style="border:1px solid #e6e6e6; margin:10px 0px 0px 10px;" class="fl">
+          <a href="#" style="display:block;"><img src="img/bottom01.jpg" /></a>
+       </li>
+       <li style="border:1px solid #e6e6e6; margin:10px 0px 0px 10px;" class="fl">
+          <a href="#" style="display:block;"><img src="img/bottom02.jpg" /></a>
+       </li>
+       <li style="border:1px solid #e6e6e6; margin:10px 0px 0px 10px;" class="fl">
+          <a href="#" style="display:block;"><img src="img/bottom03.jpg" /></a>
+       </li>
+       <li style="border:1px solid #e6e6e6; margin:10px 0px 0px 10px;" class="fl">
+          <a href="#" style="display:block;"><img src="img/bottom04.jpg" /></a>
+       </li>
+       <li style="border:1px solid #e6e6e6; margin:10px 0px 0px 10px;" class="fr">
+          <a href="#" style="display:block;"><img src="img/bottom05.jpg" /></a>
+       </li>
+    </ul>
+    <div class="btn clearfix">
+      <strong class="fl btn_left" id="left"></strong>
+      <strong class="fr btn_right"id="right"></strong>
+    </div>
+    <ul class="clearfix obtn" id="ul1">
+        <li class="fl active"></li>
+        <li class="fl"></li>
+        <li class="fl"></li>
+        <li class="fl"></li>
+        <li class="fl"></li>
+        <li class="fl"></li>
+        <li class="fl"></li>
+        <li class="fl"></li>
+        <li class="fl"></li>
+    </ul>
+  </div>
+<!-----头部结束----->
+  
+<!-----身体开始----->
+  <div class="content">
+      <div class="cut1">
+          <h2 class="puve">人气推荐<span class="pink">单品</span><b class="xtb"></b></h2>
+          <ul class="clearfix" style=" margin-top:15px; margin-right:-24px;">
+          	  <li class="module fl">
+                  <a href="#"><img src="img/v1.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">新款小包别人跟不上的时尚节奏</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v2.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">5折大口袋超韩系开衫  进店立减5元</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v3.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">new chic豹纹尖头鞋 初春时尚爆款</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v4.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">新品春装5折包邮 轻松Hold住时尚</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v5.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">潮款墨镜 告别乏味点睛搭</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v6.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">超级显瘦小脚裤 想怎么搭就怎么搭</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v7.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">祛斑、美白、美肌！透蜜 祛斑2件套</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v8.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">收毛孔，紧肌肤！我的心机 净化调理毛孔紧致面膜10片</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v9.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">自由搭配，诱惑由你掌控~蜜丝佛陀 丝柔单色眼影</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v10.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">补水首选~温碧泉 八杯水补水五件套</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v11.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">专业级持久定妆~skin79 美白防晒修颜粉饼SPF30</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl">
+                  <a href="#"><img src="img/v12.jpg" /></a>
+                  <p class="d1">
+                     <a href="#">肤色纯净亮白，真皙 冰淇淋美白补水洗面奶2支</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+          </ul>
+      </div>
+      <div class="cut2" style="margin-bottom:40px;">
+          <h2 class="puve">人气推荐<span class="pink">单品</span><b class="xtb"></b></h2>
+          <ul class="clearfix" style=" margin-top:15px; margin-right:-24px;">
+          	  <li class="module fl" style=" margin-bottom:0;">
+                  <a href="#"><img src="img/v13.jpg" /></a>
+                  <p class="d1" style=" height:18px; margin:4px 0 4px 0;">
+                     <a href="#">大框LLD墨镜</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl" style=" margin-bottom:0;">
+                  <a href="#"><img src="img/v14.jpg" /></a>
+                  <p class="d1" style=" height:18px; margin:4px 0 4px 0;">
+                     <a href="#">高端流苏长袖衬衫</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl" style=" margin-bottom:0;">
+                  <a href="#"><img src="img/v15.jpg" /></a>
+                  <p class="d1" style=" height:18px; margin:4px 0 4px 0;">
+                     <a href="#">枣红大摆半身裙</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl" style=" margin-bottom:0;">
+                  <a href="#"><img src="img/v16.jpg" /></a>
+                  <p class="d1" style=" height:18px; margin:4px 0 4px 0;">
+                     <a href="#">时尚蝙蝠小包</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl" style=" margin-bottom:0;">
+                  <a href="#"><img src="img/v17.jpg" /></a>
+                  <p class="d1" style=" height:18px; margin:4px 0 4px 0;">
+                     <a href="#">早春甜美蕾丝假两件连衣裙</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+              <li class="module fl" style=" margin-bottom:0;">
+                  <a href="#"><img src="img/v18.jpg" /></a>
+                  <p class="d1" style=" height:18px; margin:4px 0 4px 0;">
+                     <a href="#">流苏乐福鞋</a>
+                  </p>
+                  <p class="d2">
+                     <span style="color:#ff66a5; font-size:16px;">￥68.60</span>
+                     <span style="color:#999;font-size:12px;text-decoration:line-through;">￥140.00</span>
+                  </p>
+                  <p style=" line-height:15px; color:#666;">5264人已购买</p>
+              </li>
+          </ul>
+      </div>
+      <div class="cut3">
+      	  <div class="banner_z" id="banner_z_1">
+              <a href="#" class="banner_1"></a> 
+              <a href="#" class="banner_2"></a>
+          </div>     
+          <div class="blue" id="blue_1">
+             <i class="kappa"></i>
+             <i></i>
+          </div>  
+      </div>
+      <div class="cut4">
+          <h2 class="puve clearfix">
+          	<span class="pink fl" style="margin-right:12px;">衣服</span>
+            <p class="fl">
+                今日上新<span style="font-size:12px; font-weight:bold;">6204</span>件
+            </p>
+            <a href="#" class="fr">查看所有衣服></a>
+          	<b class="xtb"></b>
+          </h2>
+          <div class="main clearfix">
+              <div class="main_l fl">
+                 <ul class="main_l_top clearfix">
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m1.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季最CHIC套装</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m2.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">百变T恤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m3.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">达人必备小脚裤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m4.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">HOT换季早春连衣裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m5.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季当红外套</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m6.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开年必选早春美裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m7.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">早春潮流半身裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m8.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">个性卫衣随意穿</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m9.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">简约休闲衬衫</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m10.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开春必穿牛仔裤</i>
+                         </a>
+                     </li>
+                 </ul>
+                 <div class="main_l_bottom clearfix">
+                     <dl class="fl">
+                        <dt class="fl">上衣</dt>
+                        <dd class="fl"><a href="#">背心</a></dd>
+                        <dd class="fl"><a href="#">针织衫</a></dd>
+                        <dd class="fl"><a href="#">打底衫</a></dd>
+                        <dd class="fl"><a href="#">衬衫</a></dd>
+                        <dd class="fl"><a href="#">卫衣</a></dd>
+                        <dd class="fl"><a href="#">情侣装</a></dd>
+                        <dd class="fl"><a href="#">外套</a></dd>
+                        <dd class="fl"><a href="#">韩范儿T恤</a></dd>
+                        <dd class="fl"><a href="#">小西装</a></dd>
+                        <dd class="fl"><a href="#">马甲</a></dd>
+                     </dl>
+                     <dl class="fl">
+                        <dt class="fl">裤子</dt>
+                        <dd class="fl"><a href="#">九分裤</a></dd>
+                        <dd class="fl"><a href="#">短裤</a></dd>
+                        <dd class="fl"><a href="#">背带裤</a></dd>
+                        <dd class="fl"><a href="#">小脚裤</a></dd>
+                        <dd class="fl"><a href="#">高腰裤</a></dd>
+                        <dd class="fl"><a href="#">牛仔裤</a></dd>
+                        <dd class="fl"><a href="#">哈伦裤</a></dd>
+                        <dd class="fl"><a href="#">打底裤</a></dd>
+                        <dd class="fl"><a href="#">西装裤</a></dd>
+                        <dd class="fl"><a href="#">运动裤</a></dd>
+                     </dl>
+                     <dl class="fl" style=" border-right:none;">
+                        <dt class="fl">裙子</dt>
+                        <dd class="fl"><a href="#">连衣裙</a></dd>
+                        <dd class="fl"><a href="#">半身裙</a></dd>
+                        <dd class="fl"><a href="#">长袖连衣裙</a></dd>
+                        <dd class="fl"><a href="#">早春美裙</a></dd>
+                        <dd class="fl"><a href="#">最受欢迎裙子榜</a></dd>
+                        <dd class="fl"><a href="#">衣裙套装</a></dd>
+                        <dd class="fl"><a href="#">A字裙</a></dd>
+                        <dd class="fl"><a href="#">长裙</a></dd>
+                     </dl>
+                 </div>
+              </div>
+              <div class="main_r fr">
+                  <p class="clearfix much">
+                     <b class="fl">最热衣服好店</b>
+                     <a href="#" class="fr">更多好店></a>
+                  </p>
+                  <ul>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n1.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n2.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n3.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n4.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n5.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n6.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n7.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n8.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1" style="border:none;">
+                       <a href="#" class="fl pic">
+                          <img src="img/n9.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="cut5">
+          <h2 class="puve clearfix">
+          	<span class="pink fl" style="margin-right:12px;">衣服</span>
+            <p class="fl">
+                今日上新<span style="font-size:12px; font-weight:bold;">6204</span>件
+            </p>
+            <a href="#" class="fr">查看所有衣服></a>
+          	<b class="xtb"></b>
+          </h2>
+          <div class="main clearfix">
+              <div class="main_l fl">
+                 <ul class="main_l_top clearfix">
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m1.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季最CHIC套装</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m2.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">百变T恤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m3.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">达人必备小脚裤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m4.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">HOT换季早春连衣裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m5.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季当红外套</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m6.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开年必选早春美裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m7.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">早春潮流半身裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m8.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">个性卫衣随意穿</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m9.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">简约休闲衬衫</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m10.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开春必穿牛仔裤</i>
+                         </a>
+                     </li>
+                 </ul>
+                 <div class="main_l_bottom clearfix">
+                     <dl class="fl">
+                        <dt class="fl">上衣</dt>
+                        <dd class="fl"><a href="#">背心</a></dd>
+                        <dd class="fl"><a href="#">针织衫</a></dd>
+                        <dd class="fl"><a href="#">打底衫</a></dd>
+                        <dd class="fl"><a href="#">衬衫</a></dd>
+                        <dd class="fl"><a href="#">卫衣</a></dd>
+                        <dd class="fl"><a href="#">情侣装</a></dd>
+                        <dd class="fl"><a href="#">外套</a></dd>
+                        <dd class="fl"><a href="#">韩范儿T恤</a></dd>
+                        <dd class="fl"><a href="#">小西装</a></dd>
+                        <dd class="fl"><a href="#">马甲</a></dd>
+                     </dl>
+                     <dl class="fl">
+                        <dt class="fl">裤子</dt>
+                        <dd class="fl"><a href="#">九分裤</a></dd>
+                        <dd class="fl"><a href="#">短裤</a></dd>
+                        <dd class="fl"><a href="#">背带裤</a></dd>
+                        <dd class="fl"><a href="#">小脚裤</a></dd>
+                        <dd class="fl"><a href="#">高腰裤</a></dd>
+                        <dd class="fl"><a href="#">牛仔裤</a></dd>
+                        <dd class="fl"><a href="#">哈伦裤</a></dd>
+                        <dd class="fl"><a href="#">打底裤</a></dd>
+                        <dd class="fl"><a href="#">西装裤</a></dd>
+                        <dd class="fl"><a href="#">运动裤</a></dd>
+                     </dl>
+                     <dl class="fl" style=" border-right:none;">
+                        <dt class="fl">裙子</dt>
+                        <dd class="fl"><a href="#">连衣裙</a></dd>
+                        <dd class="fl"><a href="#">半身裙</a></dd>
+                        <dd class="fl"><a href="#">长袖连衣裙</a></dd>
+                        <dd class="fl"><a href="#">早春美裙</a></dd>
+                        <dd class="fl"><a href="#">最受欢迎裙子榜</a></dd>
+                        <dd class="fl"><a href="#">衣裙套装</a></dd>
+                        <dd class="fl"><a href="#">A字裙</a></dd>
+                        <dd class="fl"><a href="#">长裙</a></dd>
+                     </dl>
+                 </div>
+              </div>
+              <div class="main_r fr">
+                  <p class="clearfix much">
+                     <b class="fl">最热衣服好店</b>
+                     <a href="#" class="fr">更多好店></a>
+                  </p>
+                  <ul>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n1.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n2.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n3.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n4.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n5.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n6.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n7.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n8.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1" style="border:none;">
+                       <a href="#" class="fl pic">
+                          <img src="img/n9.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="cut6">
+          <h2 class="puve clearfix">
+          	<span class="pink fl" style="margin-right:12px;">衣服</span>
+            <p class="fl">
+                今日上新<span style="font-size:12px; font-weight:bold;">6204</span>件
+            </p>
+            <a href="#" class="fr">查看所有衣服></a>
+          	<b class="xtb"></b>
+          </h2>
+          <div class="main clearfix">
+              <div class="main_l fl">
+                 <ul class="main_l_top clearfix">
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m1.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季最CHIC套装</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m2.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">百变T恤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m3.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">达人必备小脚裤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m4.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">HOT换季早春连衣裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m5.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季当红外套</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m6.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开年必选早春美裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m7.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">早春潮流半身裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m8.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">个性卫衣随意穿</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m9.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">简约休闲衬衫</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m10.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开春必穿牛仔裤</i>
+                         </a>
+                     </li>
+                 </ul>
+                 <div class="main_l_bottom clearfix">
+                     <dl class="fl">
+                        <dt class="fl">上衣</dt>
+                        <dd class="fl"><a href="#">背心</a></dd>
+                        <dd class="fl"><a href="#">针织衫</a></dd>
+                        <dd class="fl"><a href="#">打底衫</a></dd>
+                        <dd class="fl"><a href="#">衬衫</a></dd>
+                        <dd class="fl"><a href="#">卫衣</a></dd>
+                        <dd class="fl"><a href="#">情侣装</a></dd>
+                        <dd class="fl"><a href="#">外套</a></dd>
+                        <dd class="fl"><a href="#">韩范儿T恤</a></dd>
+                        <dd class="fl"><a href="#">小西装</a></dd>
+                        <dd class="fl"><a href="#">马甲</a></dd>
+                     </dl>
+                     <dl class="fl">
+                        <dt class="fl">裤子</dt>
+                        <dd class="fl"><a href="#">九分裤</a></dd>
+                        <dd class="fl"><a href="#">短裤</a></dd>
+                        <dd class="fl"><a href="#">背带裤</a></dd>
+                        <dd class="fl"><a href="#">小脚裤</a></dd>
+                        <dd class="fl"><a href="#">高腰裤</a></dd>
+                        <dd class="fl"><a href="#">牛仔裤</a></dd>
+                        <dd class="fl"><a href="#">哈伦裤</a></dd>
+                        <dd class="fl"><a href="#">打底裤</a></dd>
+                        <dd class="fl"><a href="#">西装裤</a></dd>
+                        <dd class="fl"><a href="#">运动裤</a></dd>
+                     </dl>
+                     <dl class="fl" style=" border-right:none;">
+                        <dt class="fl">裙子</dt>
+                        <dd class="fl"><a href="#">连衣裙</a></dd>
+                        <dd class="fl"><a href="#">半身裙</a></dd>
+                        <dd class="fl"><a href="#">长袖连衣裙</a></dd>
+                        <dd class="fl"><a href="#">早春美裙</a></dd>
+                        <dd class="fl"><a href="#">最受欢迎裙子榜</a></dd>
+                        <dd class="fl"><a href="#">衣裙套装</a></dd>
+                        <dd class="fl"><a href="#">A字裙</a></dd>
+                        <dd class="fl"><a href="#">长裙</a></dd>
+                     </dl>
+                 </div>
+              </div>
+              <div class="main_r fr">
+                  <p class="clearfix much">
+                     <b class="fl">最热衣服好店</b>
+                     <a href="#" class="fr">更多好店></a>
+                  </p>
+                  <ul>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n1.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n2.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n3.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n4.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n5.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n6.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n7.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n8.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1" style="border:none;">
+                       <a href="#" class="fl pic">
+                          <img src="img/n9.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="cut7">
+          <h2 class="puve clearfix">
+          	<span class="pink fl" style="margin-right:12px;">衣服</span>
+            <p class="fl">
+                今日上新<span style="font-size:12px; font-weight:bold;">6204</span>件
+            </p>
+            <a href="#" class="fr">查看所有衣服></a>
+          	<b class="xtb"></b>
+          </h2>
+          <div class="main clearfix">
+              <div class="main_l fl">
+                 <ul class="main_l_top clearfix">
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m1.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季最CHIC套装</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m2.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">百变T恤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m3.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">达人必备小脚裤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m4.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">HOT换季早春连衣裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m5.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季当红外套</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m6.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开年必选早春美裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m7.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">早春潮流半身裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m8.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">个性卫衣随意穿</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m9.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">简约休闲衬衫</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m10.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开春必穿牛仔裤</i>
+                         </a>
+                     </li>
+                 </ul>
+                 <div class="main_l_bottom clearfix">
+                     <dl class="fl">
+                        <dt class="fl">上衣</dt>
+                        <dd class="fl"><a href="#">背心</a></dd>
+                        <dd class="fl"><a href="#">针织衫</a></dd>
+                        <dd class="fl"><a href="#">打底衫</a></dd>
+                        <dd class="fl"><a href="#">衬衫</a></dd>
+                        <dd class="fl"><a href="#">卫衣</a></dd>
+                        <dd class="fl"><a href="#">情侣装</a></dd>
+                        <dd class="fl"><a href="#">外套</a></dd>
+                        <dd class="fl"><a href="#">韩范儿T恤</a></dd>
+                        <dd class="fl"><a href="#">小西装</a></dd>
+                        <dd class="fl"><a href="#">马甲</a></dd>
+                     </dl>
+                     <dl class="fl">
+                        <dt class="fl">裤子</dt>
+                        <dd class="fl"><a href="#">九分裤</a></dd>
+                        <dd class="fl"><a href="#">短裤</a></dd>
+                        <dd class="fl"><a href="#">背带裤</a></dd>
+                        <dd class="fl"><a href="#">小脚裤</a></dd>
+                        <dd class="fl"><a href="#">高腰裤</a></dd>
+                        <dd class="fl"><a href="#">牛仔裤</a></dd>
+                        <dd class="fl"><a href="#">哈伦裤</a></dd>
+                        <dd class="fl"><a href="#">打底裤</a></dd>
+                        <dd class="fl"><a href="#">西装裤</a></dd>
+                        <dd class="fl"><a href="#">运动裤</a></dd>
+                     </dl>
+                     <dl class="fl" style=" border-right:none;">
+                        <dt class="fl">裙子</dt>
+                        <dd class="fl"><a href="#">连衣裙</a></dd>
+                        <dd class="fl"><a href="#">半身裙</a></dd>
+                        <dd class="fl"><a href="#">长袖连衣裙</a></dd>
+                        <dd class="fl"><a href="#">早春美裙</a></dd>
+                        <dd class="fl"><a href="#">最受欢迎裙子榜</a></dd>
+                        <dd class="fl"><a href="#">衣裙套装</a></dd>
+                        <dd class="fl"><a href="#">A字裙</a></dd>
+                        <dd class="fl"><a href="#">长裙</a></dd>
+                     </dl>
+                 </div>
+              </div>
+              <div class="main_r fr">
+                  <p class="clearfix much">
+                     <b class="fl">最热衣服好店</b>
+                     <a href="#" class="fr">更多好店></a>
+                  </p>
+                  <ul>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n1.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n2.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n3.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n4.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n5.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n6.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n7.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n8.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1" style="border:none;">
+                       <a href="#" class="fl pic">
+                          <img src="img/n9.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="cut8" style=" margin-bottom:20px;">
+          <h2 class="puve clearfix">
+          	<span class="pink fl" style="margin-right:12px;">衣服</span>
+            <p class="fl">
+                今日上新<span style="font-size:12px; font-weight:bold;">6204</span>件
+            </p>
+            <a href="#" class="fr">查看所有衣服></a>
+          	<b class="xtb"></b>
+          </h2>
+          <div class="main clearfix">
+              <div class="main_l fl">
+                 <ul class="main_l_top clearfix">
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m1.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季最CHIC套装</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m2.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">百变T恤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m3.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">达人必备小脚裤</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m4.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">HOT换季早春连衣裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m5.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">本季当红外套</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m6.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开年必选早春美裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m7.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">早春潮流半身裙</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m8.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">个性卫衣随意穿</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m9.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">简约休闲衬衫</i>
+                         </a>
+                     </li>
+                     <li class="fl">
+                         <a href="#" class="img"><img src="img/m10.jpg" /></a>
+                         <a href="#" class="opa">
+                            <i class="opa_b"></i>
+                            <i class="opa_wz">开春必穿牛仔裤</i>
+                         </a>
+                     </li>
+                 </ul>
+                 <div class="main_l_bottom clearfix">
+                     <dl class="fl">
+                        <dt class="fl">上衣</dt>
+                        <dd class="fl"><a href="#">背心</a></dd>
+                        <dd class="fl"><a href="#">针织衫</a></dd>
+                        <dd class="fl"><a href="#">打底衫</a></dd>
+                        <dd class="fl"><a href="#">衬衫</a></dd>
+                        <dd class="fl"><a href="#">卫衣</a></dd>
+                        <dd class="fl"><a href="#">情侣装</a></dd>
+                        <dd class="fl"><a href="#">外套</a></dd>
+                        <dd class="fl"><a href="#">韩范儿T恤</a></dd>
+                        <dd class="fl"><a href="#">小西装</a></dd>
+                        <dd class="fl"><a href="#">马甲</a></dd>
+                     </dl>
+                     <dl class="fl">
+                        <dt class="fl">裤子</dt>
+                        <dd class="fl"><a href="#">九分裤</a></dd>
+                        <dd class="fl"><a href="#">短裤</a></dd>
+                        <dd class="fl"><a href="#">背带裤</a></dd>
+                        <dd class="fl"><a href="#">小脚裤</a></dd>
+                        <dd class="fl"><a href="#">高腰裤</a></dd>
+                        <dd class="fl"><a href="#">牛仔裤</a></dd>
+                        <dd class="fl"><a href="#">哈伦裤</a></dd>
+                        <dd class="fl"><a href="#">打底裤</a></dd>
+                        <dd class="fl"><a href="#">西装裤</a></dd>
+                        <dd class="fl"><a href="#">运动裤</a></dd>
+                     </dl>
+                     <dl class="fl" style=" border-right:none;">
+                        <dt class="fl">裙子</dt>
+                        <dd class="fl"><a href="#">连衣裙</a></dd>
+                        <dd class="fl"><a href="#">半身裙</a></dd>
+                        <dd class="fl"><a href="#">长袖连衣裙</a></dd>
+                        <dd class="fl"><a href="#">早春美裙</a></dd>
+                        <dd class="fl"><a href="#">最受欢迎裙子榜</a></dd>
+                        <dd class="fl"><a href="#">衣裙套装</a></dd>
+                        <dd class="fl"><a href="#">A字裙</a></dd>
+                        <dd class="fl"><a href="#">长裙</a></dd>
+                     </dl>
+                 </div>
+              </div>
+              <div class="main_r fr">
+                  <p class="clearfix much">
+                     <b class="fl">最热衣服好店</b>
+                     <a href="#" class="fr">更多好店></a>
+                  </p>
+                  <ul>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n1.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n2.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n3.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n4.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n5.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n6.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n7.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1">
+                       <a href="#" class="fl pic">
+                          <img src="img/n8.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                     <li class="clearfix clear_1" style="border:none;">
+                       <a href="#" class="fl pic">
+                          <img src="img/n9.jpg" / style="width:32px; height:32px;">
+                       </a>
+                       <div class="fl" style=" line-height:22px;">
+                          <a href="#">妖精的衣橱</a>
+                          <p style="color:#999;">101件商品/总销量88464</p>
+                       </div>
+                     </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="cut3">
+      	  <div class="banner_z" id="banner_z_2">
+              <a href="#" class="banner_1"></a> 
+              <a href="#" class="banner_2"></a>
+          </div>     
+          <div class="blue" id="blue_2">
+             <i class="kappa"></i>
+             <i></i>
+          </div>  
+      </div>
+  </div>
+<!-----身体结束----->
+<!-----尾部开始----->
+  <div class="footer">
+      <div class="footer_m">
+         <div class="foot_top clearfix">
+            <div class="nuber fl">
+               <p style=" line-height:21px; font-size:18px; font-weight:bold;">400-800-577</p>
+               <p style="font-size:14px; line-height:28px;">美丽说客服热线</p>
+               <p style="line-height:26px;">周一至周日:08:00-22:00</p>
+               <span></span>
+            </div>
+            <dl class="fl">
+               <dt>买家帮助</dt>
+               <dd><a href="#">新手指南</a></dd>
+               <dd><a href="#">服务保障</a></dd>
+               <dd><a href="#">帮助中心</a></dd>
+            </dl>
+            <dl class="fl">
+               <dt>商家帮助</dt>
+               <dd><a href="#">商家入驻</a></dd>
+               <dd><a href="#">商家推广</a></dd>
+               <dd><a href="#">帮助中心</a></dd>
+            </dl>
+            <dl class="fl">
+               <dt>关于我们</dt>
+               <dd><a href="#">关于美丽说</a></dd>
+               <dd><a href="#">联系我们</a></dd>
+               <dd><a href="#">加入美丽说</a></dd>
+            </dl>
+            <dl class="fl">
+               <dt>关于我们</dt>
+               <dd><a href="#" class="cnm">新浪微博<i class="j1"></i></a></dd>
+               <dd><a href="#" class="cnm">QQ空间<i class="j2"></i></a></dd>
+               <dd><a href="#" class="cnm">腾讯微博<i class="j3"></i></a></dd>
+            </dl>
+            <dl class="fl" style="width:140px;">
+               <dt style="margin-bottom:16px;">美丽说微信服务号</dt>
+               <dd><a href="#"><img src="img/link.jpg" / style=" width:115px; height:115px;"></a></dd>
+            </dl>
+            <dl class="fr" style="width:136px;">
+               <dt style=" margin-bottom:13px;">美丽说客户端下载</dt>
+               <dd><a href="#" class="xiazai"></a></dd>
+            </dl>
+         </div>
+         <div class="foot_list">
+            <span class="fl">友情链接：</span>
+            <a href="#" class="fl">365音乐网</a>
+            <a href="#" class="fl">婚纱摄影</a>
+            <a href="#" class="fl">珂兰钻石</a>
+            <a href="#" class="fl">商业资讯</a>
+            <a href="#" class="fl">阿里巴巴生意经</a>
+            <a href="#" class="fl">家居就</a>
+            <a href="#" class="fl">家具网</a>
+            <a href="#" class="fl">亿邦动力</a>
+            <a href="#" class="fl">爱帮网</a>
+            <a href="#" class="fl">商业论坛</a>
+            <a href="#" class="fl">和家网</a>
+            <a href="#" class="fl">猪八戒网</a>
+            <a href="#" class="fr">更多>></a>
+         </div>
+         <div class="foot_last">
+            <p>
+            	Copyright ©2015 Meilishuo.com
+                电信与信息服务业务经营许可证100
+                 798号  企业法人营业执照  京ICP备
+                11031139号  京公网安备110108006045 
+            </p>
+            <p>
+            	客服邮箱：kf@meilishuo.com
+                  客服电话：4000-800-57
+                  7  文明办网文明上网举报电话：010-8261
+                  5762  违法不良信息举报中心 我最喜爱的人民警察评选>>
+            </p>
+         </div>
+      </div>
+  </div>
+
+</body>
+</html>
